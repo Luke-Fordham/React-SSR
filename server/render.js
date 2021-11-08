@@ -16,7 +16,7 @@ import { API_DELAY, ABORT_DELAY } from "./delays";
 // In a real setup, you'd read it from webpack build stats.
 let assets = {
   "main.js": "/main.js",
-  "main.css": "/main.css"
+  "main.css": "/common.css"
 };
 
 module.exports = function render(url, res) {
@@ -39,7 +39,7 @@ module.exports = function render(url, res) {
   const data = createServerData();
   const { pipe, abort } = renderToPipeableStream(
     <DataProvider data={data}>
-      <App assets={assets} />
+      <App/>
     </DataProvider>,
     {
       bootstrapScripts: [assets["main.js"]],

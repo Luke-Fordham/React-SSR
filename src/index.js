@@ -6,9 +6,7 @@
  *
  */
 
-import { hydrate } from "react-dom";
+import { hydrateRoot } from "react-dom";
 import App from "./App";
 
-const container = document.getElementById("root");
-
-hydrate(<App />, container);
+hydrateRoot(document, <App assets={window.assetManifest} />);

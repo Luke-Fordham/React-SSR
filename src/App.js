@@ -16,6 +16,7 @@ import NavBar from "./NavBar";
 const Comments = lazy(() => import("./Comments" /* webpackPrefetch: true */));
 const Sidebar = lazy(() => import("./Sidebar" /* webpackPrefetch: true */));
 const Post = lazy(() => import("./Post" /* webpackPrefetch: true */));
+const Counter = lazy(() => import("./components/Counter" /* webpackPrefetch: true */));
 
 export default function App({ assets }) {
   return (
@@ -31,27 +32,15 @@ export default function App({ assets }) {
 
 function Content() {
   return (
-    <Layout>
-      <NavBar />
-      <aside className="sidebar">
-        <Suspense fallback={<Spinner />}>
-          <Sidebar />
-        </Suspense>
-      </aside>
-      <article className="post">
-        <h1>TEST</h1>
-        <Suspense fallback={<Spinner />}>
-          <Post />
-        </Suspense>
-        <section className="comments">
-          <h2>Comments</h2>
-          <Suspense fallback={<Spinner />}>
-            <Comments />
-          </Suspense>
-        </section>
-        <h2>Thanks for reading!</h2>
-      </article>
-    </Layout>
+      <>
+          <Layout>
+              <NavBar />
+              <h1>Test Counter</h1>
+              <Suspense fallback={<Spinner />}>
+                  <Counter />
+              </Suspense>
+          </Layout>
+      </>
   );
 }
 

@@ -12,6 +12,7 @@ const path = require('path');
 const rimraf = require('rimraf');
 const webpack = require('webpack');
 
+
 const isProduction = process.env.NODE_ENV === 'production';
 rimraf.sync(path.resolve(__dirname, '../build'));
 webpack(
